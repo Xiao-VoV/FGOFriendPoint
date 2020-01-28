@@ -14,11 +14,11 @@ else:
     print("开始抽卡--->")
     i = 0
     for i in range(50):
-        for n in range(8):
+        for n in range(7):
             os.system('adb shell input tap 930.4 622.2')
             time.sleep(0.2)
         os.system('adb shell input tap 861.4 753')
         time.sleep(0.3)
         print(f"第 {i+1} 次抽卡！")
-
+print("抽卡结束！")
 os.system('adb kill-server')
