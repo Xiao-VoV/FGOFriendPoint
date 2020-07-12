@@ -26,7 +26,12 @@ import winsound
 print("----------------------------")
 print("在<继续进行10次召唤>界面处运行程序!")
 print("----------------------------")
-if os.system('adb connect 127.0.0.1:7555') != 0:
+port = str(input("输入要连接的端口号:>"))
+if port.isdigit():
+    print('will connect 127.0.0.1:'+port)
+else:
+    port = '7555 '
+if os.system('adb connect 127.0.0.1:'+port) != 0:
     print("连接错误！")
 else:
     print("----------开始抽卡----------")
