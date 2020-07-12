@@ -2,12 +2,11 @@ import os
 import time
 import winsound
 
-print('will connect 127.0.0.1:7555')
 
-if os.system('adb connect 127.0.0.1:') != 0:
+if os.system('adb connect 127.0.0.1:7555') != 0:
     print("连接错误！")
 else:
-    print("----------开始抽卡----------")
+    #print("----------开始抽卡----------")
     i = 0
     count  = 50
 
@@ -24,7 +23,7 @@ else:
             os.system('adb shell input tap 1288.0 599.2')
             time.sleep(0.1)
         time.sleep(0.28)
-        print(f"第 {i+1} 次抽卡！")
+        #print(f"第 {i+1} 次抽卡！")
 
 #记录结束时间
 endtime = time.time()
