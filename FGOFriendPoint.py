@@ -49,10 +49,10 @@ else:
         os.system('adb shell input tap 1406.3 871.2')
         j = 0
         time.sleep(2)
-        for j in range(3):
+        for j in range(5):
             #os.system('adb shell input tap 1288.0 599.2')
             os.system('adb shell input tap 1830.0 889.2')
-            time.sleep(0.1)
+            time.sleep(0.2)
         time.sleep(0.32)
         print(f"第 {i+1} 次抽卡！")
 
