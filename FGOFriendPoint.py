@@ -35,16 +35,19 @@ if os.system('adb connect 127.0.0.1:'+port) != 0:
     print("连接错误！")
 else:
     i = 0
-    count  = int(input("输入要抽卡的次数:>"))
-    tabTimes = int(input("输入循环点击次数:>"))
-    if isinstance(tabTimes,int) == False:
-        tabTimes = 4
+    count  = str(input("输入要抽卡的次数\(默认100次\):>"))
+    if count.isdigit() == False:
+        count = '100'
+    tabTimes = str(input("输入循环点击次数\(默认4次\):>"))
+    if tabTimes.isdigit() == False:
+        tabTimes = '4'
+
 
     print("----------开始抽卡----------")
     #记录开始时间
     starttime = time.time()
 
-    for i in range(count):
+    for i in range(int(count)):
         #os.system('adb shell input tap 852.4 761.0')
         os.system('adb shell input tap 1137.4 1013.0')
         #time.sleep(0.05)
@@ -52,7 +55,7 @@ else:
         os.system('adb shell input tap 1406.3 871.2')
         j = 0
         time.sleep(2)
-        for j in range(tabTimes):
+        for j in range(int(tabTimes)):
             #os.system('adb shell input tap 1288.0 599.2')
             os.system('adb shell input tap 1830.0 889.2')
             time.sleep(0.2)
